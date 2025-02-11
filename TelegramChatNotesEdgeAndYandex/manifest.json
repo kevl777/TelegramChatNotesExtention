@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Telegram Chat Notes",
+  "version": "1.0",
+  "description": "Добавляет заметки для чатов Telegram с Markdown.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://web.telegram.org/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://web.telegram.org/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "ico16.png",
+      "48": "ico48.png",
+      "128": "ico128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/marked.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
